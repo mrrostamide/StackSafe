@@ -1,0 +1,25 @@
+{
+  "name": "StackSafe Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
+    }
+  },
+     "postCreateCommand": "python3 --version && git --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "ritwickdey.LiveServer"
+      ]
+    }
+  },
+  "forwardPorts": [5500],
+  "portsAttributes": {
+    "5500": {
+      "label": "StackSafe Preview",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
